@@ -8,14 +8,17 @@
 
     Shopper.destroy_all
     Customer.destroy_all
+    Order.destroy_all
 
 
 
     Shopper.create(name:"steve", availability:"MTuWTh", weight_max: 25)
     Shopper.create(name:"Mark", availability:"SuMTu", weight_max: 10)
-    Shopper.create(name:"Milo", availability:"SaSuF", weight_max: 5)
+   y = Shopper.create(name:"Milo", availability:"SaSuF", weight_max: 5)
 
-    Customer.create(name:"name1")
+   x = Customer.create(name:"name1")
     Customer.create(name:"barbra")
     Customer.create(name:"velma")
     Customer.create(name:"tom")
+
+    Order.create(customer:x, shopper:y, grocery_list:"eggs, milk, ice-cream", list_weight: 4.6)

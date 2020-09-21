@@ -1,0 +1,13 @@
+<H1>Sign up... plz</H1>
+<%= form_for @shopper do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+<br>
+    <%= f.label :availability %>
+    <%= f.text_field :availability %>
+<br>
+    <%= f.label :weight_max %>
+    <%= f.text_field :weight_max %>
+<br>
+    <%= f.submit "Register as a shopper" %>
+<% end %>

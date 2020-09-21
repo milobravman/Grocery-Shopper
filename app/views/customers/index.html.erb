@@ -1,0 +1,7 @@
+<H1 class="customer-index-header" >Customer Index</H1>
+<ul>
+    <% @customers.each do |customer| %>
+        <li><%= link_to customer.name, customer_path(customer) %></li>
+    <% end %>
+</ul>
+<%= button_to "register as a customer", new_customer_path, method: "get" %>

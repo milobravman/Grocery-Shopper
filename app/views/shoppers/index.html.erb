@@ -1,0 +1,7 @@
+<H1>Shopper Index</H1>
+<ul>
+    <% @shoppers.each do |shopper| %>
+        <li><%= link_to shopper.name, shopper_path(shopper) %></li>
+    <% end %>
+</ul>
+<%= button_to "register as a shopper", new_shopper_path, method: "get" %>

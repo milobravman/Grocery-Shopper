@@ -1,0 +1,12 @@
+<H1><%= @shopper.name %><H1>
+<div> 
+    max carry is <%= @shopper.weight_max %> lbs
+</div>
+<ul>
+    <% @shopper.orders.each do |order| %>
+        <li><%= order.list_weight %> lbs <%= order.grocery_list%> </li>
+    <%end%>
+</ul>
+<%= button_to "edit this shopper", edit_shopper_path(@shopper) , method: "get" %>
+<%= button_to "delete this shopper", shopper_path(@shopper) , method: "delete" %>
+<%= button_to "return to index", shoppers_path , method: "get" %>

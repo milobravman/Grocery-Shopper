@@ -1,0 +1,9 @@
+<H1 class="customer-index-header"><%= @customer.name %><H1>
+<ul>
+    <% @customer.orders.each do |order| %>
+        <li><%= order.list_weight %> lbs <%= order.grocery_list%> </li>
+    <%end%>
+</ul>
+<%= button_to "edit this customer", edit_customer_path(@customer) , method: "get" %>
+<%= button_to "delete this customer", customer_path(@customer) , method: "delete" %>
+<%= button_to "return to index", customers_path , method: "get" %>
