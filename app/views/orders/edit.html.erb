@@ -1,0 +1,10 @@
+<H1><%= render partial: "shared/homeicon"%>You put your name in wrong?</H1>
+<%= form_for @order do |f| %>
+    <%= f.label :grocery_list %>
+    <%= f.text_field :grocery_list %>
+<br>
+    <%= f.label :list_weight %>
+    <%= f.text_field :list_weight %>
+<br>
+    <%= f.submit "Submit your order" %>
+<% end %>

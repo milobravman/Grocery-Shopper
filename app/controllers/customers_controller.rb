@@ -34,6 +34,16 @@ class CustomersController < ApplicationController
         redirect_to customers_path
     end
 
+    def place_order
+        customer = Customer.find(params[:id])
+        #byebug # id = 7
+        order = customer.orders.build
+        order.save
+        # id = nil
+        redirect_to edit_order_path(order)
+    end
+
+
     private
 
     def customer_params(*args)

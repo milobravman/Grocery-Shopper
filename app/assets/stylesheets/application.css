@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+body {
+    background-color:#E0FBFC;
+
+}
+/* unvisited link */
+a:link {
+    color: #1C2541;
+  }
+  
+  /* visited link */
+a:visited {
+    color: #1C2541;
+  }
+  
+  /* mouse over link */
+a:hover {
+    color: hotpink;
+  }
