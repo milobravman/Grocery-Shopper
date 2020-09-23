@@ -1,0 +1,12 @@
+<H1>
+<%= render partial:"shared/homeicon"%> <span id="header"> Orders index</span>
+</H1>
+<ul>
+    <% @orders.each do |order| %>
+        <li><%=order.grocery_list%></li>
+        <li><%=order.list_weight%></li>
+        <li><%=order.status%></li>
+        <%= button_to "take this order", order_path(order) , method: "patch" %>
+        <br>
+    <% end %>
+</ul>

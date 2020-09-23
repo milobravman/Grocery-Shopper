@@ -1,8 +1,12 @@
 class OrdersController < ApplicationController
 
-    def place_order
-
-    end
+    def index
+        if params[:status == "pending"]
+            @orders = Order.where(status: "pending")
+        else
+            @orders = Order.all
+        end
+    end    
 
     def edit
         @order = Order.find(params[:id])
@@ -10,8 +14,12 @@ class OrdersController < ApplicationController
 
     def update
         order = Order.find(params[:id])
+        if order.grocery_list == nil
         order.update(order_params(:grocery_list, :list_weight, :customer))
         redirect_to customer_path(order.customer)
+        else 
+            # to do
+        end
     end
 
     def destroy

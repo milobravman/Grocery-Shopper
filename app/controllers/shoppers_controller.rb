@@ -6,6 +6,7 @@ class ShoppersController < ApplicationController
 
     def show
         @shopper = Shopper.find(params[:id])
+        @orders = Order.where(status: "pending")
     end
 
     def new
@@ -31,6 +32,12 @@ class ShoppersController < ApplicationController
         shopper = Shopper.find(params[:id])
         shopper.destroy
         redirect_to shoppers_path
+    end
+
+    def l_order
+        order = Order.find(params[:id])
+        order.shopper = @shopper
+        redirect_to shopper_path(@shopper)
     end
 
     private

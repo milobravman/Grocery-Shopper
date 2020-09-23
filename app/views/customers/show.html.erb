@@ -1,4 +1,4 @@
-<H1><%= render partial: "shared/homeicon"%><%= @customer.name %><H1>
+<H1><%= render partial: "shared/homeicon"%><span id="header"><%= @customer.name %></span></H1>
 <ul>
     <% @customer.orders.each do |order| %>
         <li><%= order.list_weight %> lbs <%= order.grocery_list%> </li>

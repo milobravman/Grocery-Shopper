@@ -1,5 +1,5 @@
 
-<H1><%= render partial: "shared/homeicon"%>Shopper Index</H1>
+<H1><%= render partial: "shared/homeicon"%><span id="header">Shopper Index</span></H1>
 <ul>
     <% @shoppers.each do |shopper| %>
         <li><%= link_to shopper.name, shopper_path(shopper) %></li>
